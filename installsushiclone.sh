@@ -5,7 +5,7 @@ set -o pipefail
 set -o nounset
 
 if ! command -v systemctl >/dev/null 2>&1; then
-    echo "> Sorry but this scripts is only for Linux with systemd, eg: Ubuntu 16.04+/Centos 7+ ..."
+    echo "Sorry! This script is only for Linux with systemd, eg: Ubuntu 16.04 and later..."
     exit 1
 fi
 
@@ -14,7 +14,7 @@ if [[ $(id -u) -ne 0 ]]; then
     exit 1
 fi
 
-CLDBIN=/usr/bin/fclone
+CLDBIN=/usr/bin/sclone
 OSARCH=$(uname -m)
 case $OSARCH in 
     x86_64)
